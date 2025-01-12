@@ -5,6 +5,7 @@ import Main from "../components/main";
 import Footer from "../../../shared/components/footer";  
 
 const Home = () => {
+  
   return (
     <div className="w-full h-fit md:p-0 flex flex-col items-center bg-[#f6f6f6]">
       <Head />

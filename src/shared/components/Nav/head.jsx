@@ -17,7 +17,7 @@ const Head = () => {
     {
       img: "/src/assets/ser-circle-svgrepo-com (1).svg",
       name: "User",
-      link: "user",
+      link: "/userinformation",
     },
     { img: "/src/assets/menu-svgrepo-com.svg", name: "Menu", link: "/menu" },
   ]);
@@ -47,6 +47,7 @@ const Head = () => {
             );
           })}
         </div>
+        
       </div>
     </div>
   );
