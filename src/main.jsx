@@ -9,6 +9,10 @@ import Dashboard from "./features/admin/page/dashboard.jsx";
 import Settings from "./features/admin/page/settings.jsx";
 import AddProduct from "./features/admin/page/addProduct.jsx";
 import ProductProvider from "./features/admin/componets/ProductProvider.jsx";
+import LoginForm from "./features/auth/pages/login-form.jsx";
+import UserInformation from "./features/userInformation/pages/userInformation.jsx";
+
+
 
 const router = createBrowserRouter([
   { path: "/", element: <Home /> },
@@ -16,6 +20,8 @@ const router = createBrowserRouter([
   { path: "/dashboard", element: <Dashboard /> },
   { path: "/settings", element: <Settings /> },
   { path: "/addProduct", element: <AddProduct /> },
+  { path: "/login", element: <LoginForm /> },
+  { path: "/user", element: <UserInformation /> },
 ]);
 
 createRoot(document.getElementById("root")).render(

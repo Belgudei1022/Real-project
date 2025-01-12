@@ -7,7 +7,7 @@ const UserSidebar = () => {
     {
       image: "/src/assets/ser-circle-svgrepo-com (1).svg",
       text: "Хувийн мэдээлэл",
-      link: "userInformation",
+      link: "/user",
     },
     {
       image: "/src/assets/list-ul-alt-svgrepo-com.svg",

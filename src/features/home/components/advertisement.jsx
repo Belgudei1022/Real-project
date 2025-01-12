@@ -3,10 +3,10 @@ import React, { useEffect, useState } from "react";
 const Advertisement = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const images = [
-    "https://static.vecteezy.com/system/resources/previews/023/014/948/original/3d-t-shirt-with-black-color-template-free-vector.jpg",
-    "https://th.bing.com/th/id/R.243fa0bf7196cf715778364c400d37dd?rik=5cBzTx0lzGJaEA&pid=ImgRaw&r=0",
-    "https://www.creativefabrica.com/wp-content/uploads/2022/12/28/Varsity-Jacket-Mockup-on-blue-white-Graphics-54877397-1.jpg",
-    "https://img.daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.webp",
+    "https://media.istockphoto.com/id/1945077529/video/advertisement-search-engine-advertisement-digitaldisplay-business-technologyartificial.jpg?s=640x640&k=20&c=q01vOlnpxbKgpZ6lqduQOl3UnylW9v2kIbZwUk_fWcI=",
+    "https://tse4.mm.bing.net/th?id=OIP.Btbk71iA7GHoihSlLzTutgHaDt&w=700&h=350&rs=1&pid=ImgDetMain",
+    "https://media.istockphoto.com/id/1327419990/vector/prepare-your-luggage-passport-ticket-and-mask-for-returning-to-travel-ready-to-travel-back.jpg?s=612x612&w=0&k=20&c=rVJj7W80IuoZ9nTs7DRy3qEmIH2_HyEXES2n5AFGg00=",
+    "https://th.bing.com/th/id/R.be4788fc09516a19b5b1ee32e686d9fb?rik=Vem%2bypGVz%2bz0tw&pid=ImgRaw&r=0",
   ];
 
   useEffect(() => {

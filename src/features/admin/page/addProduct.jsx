@@ -10,11 +10,14 @@ const AddProduct = () => {
   const addProduct = (newProduct) => {
     if (
       newProduct &&
+      newProduct.id &&
+      newProduct.images &&
       newProduct.title &&
       newProduct.price &&
       newProduct.description
     ) {
-      const updatedProducts = [...products, newProduct];
+      const productWithId = { ...newProduct, id: Math.random().toString(36).substr(2, 9) };
+      const updatedProducts = [...products, productWithId];
       setProducts(updatedProducts);
       localStorage.setItem("products", JSON.stringify(updatedProducts));
     } else {
