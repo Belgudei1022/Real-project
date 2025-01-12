@@ -2,6 +2,7 @@ import React from "react";
 import Head from "../../../shared/components/Nav/head";
 import Category from "../../../shared/components/Nav/category";
 import UserSidebar from "../../../shared/components/userSideBar/userSidebar";
+import NoItem from "../components/noItem";
 
 const Cart = () => {
   return (
@@ -14,24 +15,12 @@ const Cart = () => {
             <UserSidebar />
           </div>
           <div className="w-3/4 h-full flex flex-col justify-center items-center">
-            <div className="flex flex-col items-center gap-[20px]">
-              <img
-                src="/src/assets/cart-svgrepo-com.svg"
-                alt=""
-                className="w-[70px] h-[70px]"
-              />
-              <h1>Таны сагс хоосон байна</h1>
-            </div>
+            <NoItem />
           </div>
         </div>
       </div>
       <div className="mobile w-full h-full flex flex-col justify-center items-center  md:hidden">
-        <img
-          src="/src/assets/cart-svgrepo-com.svg"
-          alt=""
-          className="w-[70px] h-[70px]"
-        />
-        <h1>Таны сагс хоосон байна</h1>
+        <NoItem />
       </div>
     </div>
   );

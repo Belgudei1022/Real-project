@@ -5,6 +5,7 @@ import EmailAuth from "../components/email-auth";
 import PhoneAuth from "../components/phone-auth";
 import PasswordAuth from "../components/password-auth";
 import PasswordCheck from "../components/password-check";
+import { Link } from "react-router";
 
 const SignupForm = () => {
   return (
@@ -24,9 +25,11 @@ const SignupForm = () => {
             <PasswordAuth />
             <PasswordCheck />
             <div className="w-full flex flex-col items-center  ">
-              <button className="w-[300px] h-[40px] bg-[#000] text-[#fff] rounded-xl">
-                Бүртгүүлэх
-              </button>
+              <Link to={"/login"}>
+                <button className="w-[300px] h-[40px] bg-[#000] text-[#fff] rounded-xl">
+                  Бүртгүүлэх
+                </button>
+              </Link>
             </div>
           </div>
         </div>

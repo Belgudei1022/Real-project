@@ -2,6 +2,7 @@ import React from "react";
 import Head from "../../../shared/components/Nav/head";
 import Category from "../../../shared/components/Nav/category";
 import UserSidebar from "../../../shared/components/userSideBar/userSidebar";
+import NoNotification from "../components/noNotification";
 
 const Notification = () => {
   return (
@@ -26,14 +27,7 @@ const Notification = () => {
             <UserSidebar />
           </div>
           <div className="w-3/4 h-full flex flex-col justify-center items-center">
-            <div className="flex flex-col items-center gap-[20px]">
-              <img
-                src="/src/assets/bell-svgrepo-com.svg"
-                alt=""
-                className="w-[70px] h-[70px]"
-              />
-              <h1>Мэдэгдэл хоосон байна</h1>
-            </div>
+            <NoNotification />
           </div>
         </div>
       </div>

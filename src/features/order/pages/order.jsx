@@ -2,6 +2,7 @@ import React from "react";
 import Head from "../../../shared/components/Nav/head";
 import Category from "../../../shared/components/Nav/category";
 import UserSidebar from "../../../shared/components/userSideBar/userSidebar";
+import NoOrder from "../components/noOrder";
 
 const Order = () => {
   return (
@@ -11,14 +12,7 @@ const Order = () => {
         <Category />
       </div>
       <div className="mobile w-full h-full flex flex-col justify-center items-center  md:hidden">
-        <div className="flex flex-col items-center">
-          <img
-            src="/src/assets/shopping-bag-svgrepo-com.svg"
-            alt=""
-            className="w-[70px] h-[70px]"
-          />
-          <h1>Таны захиалага хоосон байна</h1>
-        </div>
+        <NoOrder />
       </div>
       <div className="desktop w-full h-full  justify-center hidden md:flex">
         <div className="content max-w-[1440px]  w-full h-full flex flex-row ">
@@ -26,14 +20,7 @@ const Order = () => {
             <UserSidebar />
           </div>
           <div className="w-3/4 h-full flex flex-col justify-center items-center">
-            <div className="flex flex-col items-center gap-[20px]">
-              <img
-                src="/src/assets/shopping-bag-svgrepo-com.svg"
-                alt=""
-                className="w-[70px] h-[70px]"
-              />
-              <h1>Таны сагс хоосон байна</h1>
-            </div>
+            <NoOrder />
           </div>
         </div>
       </div>
