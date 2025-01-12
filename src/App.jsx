@@ -1,10 +1,13 @@
 import { useState } from "react";
 import "./App.css";
+import UserInformation from "./features/userInformation/pages/userInformation";
 
 function App() {
-  // const [count, setCount] = useState(0);
-
-  return <></>;
+  return (
+    <>
+      <UserInformation />
+    </>
+  );
 }
 
 export default App;
