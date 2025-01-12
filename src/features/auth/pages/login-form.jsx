@@ -4,6 +4,7 @@ import PasswordAuth from "../components/password-auth";
 import FacebookAuth from "../components/facebook-auth";
 import GoogleAuth from "../components/google-auth";
 import BackButton from "../../../shared/components/back-button";
+import { Link } from "react-router";
 
 const LoginForm = () => {
   return (
@@ -21,14 +22,16 @@ const LoginForm = () => {
               <a className="w-[300px] flex justify-end">Нууц үг мартсан</a>
             </div>
             <div className="w-full flex flex-col items-center  ">
-              <button className="w-[300px] h-[40px] bg-[#000] text-[#fff] rounded-xl">
-                Login
-              </button>
-              <a
-                href="#"
-                className="text-[#000]/70 w-[300px] text-[14px] flex justify-center border-b-[1px] py-[15px]">
-                Шинэ хэрэглэгчээр бүртгүүлэх
-              </a>
+              <Link to={"/"}>
+                <button className="w-[300px] h-[40px] bg-[#000] text-[#fff] rounded-xl">
+                  Login
+                </button>
+              </Link>
+              <Link to={"/signup"}>
+                <button className="text-[#000]/70 w-[300px] text-[14px] flex justify-center border-b-[1px] py-[15px]">
+                  Шинэ хэрэглэгчээр бүртгүүлэх
+                </button>
+              </Link>
             </div>
             <FacebookAuth />
             <GoogleAuth />

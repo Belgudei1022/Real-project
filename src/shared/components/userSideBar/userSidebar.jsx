@@ -7,27 +7,27 @@ const UserSidebar = () => {
     {
       image: "/src/assets/ser-circle-svgrepo-com (1).svg",
       text: "Хувийн мэдээлэл",
-      link: "/user",
+      link: "/userinformation",
     },
     {
       image: "/src/assets/list-ul-alt-svgrepo-com.svg",
       text: "Захиалага",
-      link: "order",
+      link: "/order",
     },
     {
       image: "/src/assets/heart-alt-svgrepo-com.svg",
       text: "Хүслийн жагсаалт",
-      link: "wishList",
+      link: "/wishList",
     },
     {
       image: "/src/assets/bell-svgrepo-com.svg",
       text: "Мэдэгдэл",
-      link: "notification",
+      link: "/notification",
     },
     {
       image: "/src/assets/cart-svgrepo-com.svg",
       text: "Сагс",
-      link: "cart",
+      link: "/cart",
     },
   ]);
 
@@ -39,13 +39,12 @@ const UserSidebar = () => {
         })}
       </div>
       <div className="w-full h-fit">
-        <a href="/login">
+        <Link to={"/login"}>
           <button className="flex flex-row gap-[20px]">
             <img src="/src/assets/leave-svgrepo-com.svg" alt="" />
             <h1>Гарах</h1>
           </button>
-        </a>
-        {/* <Link to={"login"}></Link> */}
+        </Link>
       </div>
     </div>
   );
