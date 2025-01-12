@@ -13,6 +13,9 @@ import Cart from "./features/cart/pages/cart.jsx";
 import Order from "./features/order/pages/order.jsx";
 import WishList from "./features/wishList/pages/wishList.jsx";
 import Notification from "./features/notification/pages/notification.jsx";
+import Dashboard from "./features/admin/page/dashboard.jsx";
+import AddProduct from "./features/admin/page/addProduct.jsx";
+import Settings from "./features/admin/page/settings.jsx";
 
 const router = createBrowserRouter([
   { path: "/", element: <Home /> },
@@ -24,6 +27,9 @@ const router = createBrowserRouter([
   { path: "/order", element: <Order /> },
   { path: "/wishlist", element: <WishList /> },
   { path: "/notification", element: <Notification /> },
+  { path: "/dashboard", element: <Dashboard /> },
+  { path: "/addProduct", element: <AddProduct /> },
+  { path: "/settings", element: <Settings /> },
 ]);
 
 createRoot(document.getElementById("root")).render(
