@@ -7,7 +7,7 @@ const ProductCard = ({ el }) => {
   if (!el) {
     return null;
   }
-  const { id, images, title, price, description} = el;
+  const { id, images, title, price, rating} = el;
 
   return (
     <Link to={`/product/${id}`}>
@@ -25,9 +25,9 @@ const ProductCard = ({ el }) => {
         <p className="text-[14px] w-fit h-[32px] flex items-center absolute right-[15px] top-[10px] px-[10px] py-[2px] bg-[#fff]/50 rounded-xl drop-shadow md:text-[18px]">
           {price}
         </p>
-        {/* <p className="absolute h-[32px] w-fit right-[55px] bottom-[10px] gap-[5px] flex flex-row items-center px-[10px] py-[2px] bg-[#fff]/50 rounded-3xl drop-shadow md:text-[20px]">
-          {description}
-        </p> */}
+        <p className="absolute h-[32px] w-fit right-[55px] bottom-[10px] gap-[5px] flex flex-row items-center px-[10px] py-[2px] bg-[#fff]/50 rounded-3xl drop-shadow md:text-[20px]">
+          {rating} <img src="/src\assets\Star.png" alt="" />
+        </p>
         <div className="buttons absolute bottom-[10px] right-[15px] flex flex-col gap-[7px]">
           <WishButton />
           <PlusButton />

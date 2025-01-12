@@ -47,6 +47,7 @@ const Head = () => {
             </Link>
           ))}
         </div>
+        
       </div>
     </div>
   );
