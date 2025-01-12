@@ -25,7 +25,7 @@ const Sidebar = () => {
             </li>
             <li className="logo flex gap-4 items-center">
               <img src="src/assets/sign-out-alt-svgrepo-com.svg" alt="" />
-              <a href="#">Logout</a>
+              <a href="/login">Logout</a>
             </li>
           </ul>
 
@@ -34,11 +34,10 @@ const Sidebar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="dropdown-content menu bg-base-100 z-[1] w-screen shadow flex items-start"
-          >
+            className="dropdown-content menu bg-base-100 z-[1] w-screen shadow flex items-start">
             <li className="logo flex flex-row items-center">
               <img src="src/assets/product-svgrepo-com (1).svg" alt="" />
-              <Link to="/add-product">Add Product</Link>
+              <Link to="/addProduct">Add Product</Link>
             </li>
             <li className="logo flex flex-row items-center">
               <img src="src/assets/settings-svgrepo-com.svg" alt="" />
@@ -46,7 +45,7 @@ const Sidebar = () => {
             </li>
             <li className="logo flex flex-row items-center">
               <img src="src/assets/sign-out-alt-svgrepo-com.svg" alt="" />
-              <a href="#">Logout</a>
+              <a href="/login">Logout</a>
             </li>
           </ul>
         </div>
