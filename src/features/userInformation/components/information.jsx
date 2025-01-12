@@ -7,7 +7,7 @@ import SaveButton from "./saveButton";
 
 const Information = () => {
   return (
-    <div className="w-full h-fit flex flex-col py-[40px] px-[30px] gap-[20px] bg-white rounded-xl">
+    <div className="w-full h-fit flex flex-col py-[40px] px-[30px] gap-[20px] bg-white rounded-xl md:w-[70%]">
       <Name />
       <PhoneNumber />
       <Email />

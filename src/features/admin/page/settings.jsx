@@ -6,7 +6,6 @@ const Settings = () => {
     username: "Jack and Bek",
     email: "javkhaa&Bek@example.com",
     notifications: true,
-    // darkMode: false,
   });
 
   const handleInputChange = (e) => {
@@ -18,7 +17,6 @@ const Settings = () => {
   };
 
   const handleSave = () => {
-    // Save settings (e.g., API call or local storage)
     alert("Settings saved!");
   };
 
@@ -71,19 +69,6 @@ const Settings = () => {
                 style={{ marginRight: "8px" }}
               />
               Enable Notifications
-            </label>
-          </div>
-
-          <div style={{ marginBottom: "15px" }}>
-            <label>
-              <input
-                type="checkbox"
-                name="darkMode"
-                checked={settings.darkMode}
-                onChange={handleInputChange}
-                style={{ marginRight: "8px" }}
-              />
-              yamar negen yum
             </label>
           </div>
 

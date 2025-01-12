@@ -15,10 +15,13 @@ const UserInformation = () => {
           <Information />
         </div>
       </div>
-      <div className="desktop w-full h-full flex justify-center">
+      <div className="desktop w-full h-full  justify-center hidden md:flex">
         <div className="content max-w-[1440px] w-full h-full flex flex-row ">
           <div className="side w-1/4">
             <UserSidebar />
+          </div>
+          <div className="w-3/4 flex justify-center items-center">
+            <Information />
           </div>
         </div>
       </div>
