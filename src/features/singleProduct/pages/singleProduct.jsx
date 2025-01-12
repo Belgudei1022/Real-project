@@ -16,6 +16,7 @@ import Information from "../components/information";
 import OtherReviews from "../components/otherReviews";
 import Review from "../components/review";
 import { useParams } from "react-router";
+import Footer from "../../../shared/components/footer";
 
 const SingleProduct = () => {
   const param = useParams();
@@ -27,7 +28,7 @@ const SingleProduct = () => {
       .then((res) => res.json())
       .then((data) => {
         setProductData([data]);
-        setRating(data.rating); // Assuming the API response has a 'rating' field
+        setRating(data.rating); 
       });
   }, [param.id]);
 
@@ -169,6 +170,7 @@ const SingleProduct = () => {
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };

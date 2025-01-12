@@ -17,9 +17,9 @@ const Footer = () => {
         <p>
           J&B eCommerce
           <br />
-          2024 оноос эхлэн үйл ажиллагаа явуулж байна.
+          2025 оноос эхлэн үйл ажиллагаа явуулж байна.
           <br/>
-            © 2024 J&B eCommerce. All rights reserved.
+            © 2025 J&B eCommerce. All rights reserved.
         </p>
       </aside>
       <nav>

@@ -6,8 +6,14 @@ const Sidebar = () => {
     <div className="w-full h-screen flex flex-col fixed lg:w-1/6">
       <div className="bg-base-100 text-white lg:h-screen">
         <div className="p-[30px] w-full bg-white text-black">
-          <img src="" alt="" />
-          <h1>Logo</h1>
+
+          <Link to="/">
+            <img
+              src="src\assets\Screenshot_2025-01-06_210416-removebg-preview (1).png"
+              alt=""
+              className="w-auto h-[35px]"
+            />{" "}
+          </Link>
         </div>
         <div className="dropdown dropdown-bottom flex py-[15px] justify-between lg:flex-col lg:gap-4 lg:py-[30px]">
           <div className="flex items-center px-[30px] gap-6">
@@ -46,7 +52,7 @@ const Sidebar = () => {
             </li>
             <li className="logo flex flex-row items-center">
               <img src="src/assets/sign-out-alt-svgrepo-com.svg" alt="" />
-              <a href="#">Logout</a>
+              <Link to="/login">Гарах</Link>
             </li>
           </ul>
         </div>
