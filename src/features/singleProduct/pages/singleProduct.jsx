@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Head from "../../../shared/components/Nav/head";
 import Category from "../../../shared/components/Nav/category";
 import BackButton from "../../../shared/components/back-button";
-import Image from "../components/Image";
+import Image from "../components/image";
 import Brand from "../components/brand";
 import Title from "../components/title";
 import Rating from "../components/rating";
