@@ -16,6 +16,7 @@ import Notification from "./features/notification/pages/notification.jsx";
 import Dashboard from "./features/admin/page/dashboard.jsx";
 import AddProduct from "./features/admin/page/addProduct.jsx";
 import MobileCategory from "./shared/components/mobileCategory.jsx";
+import Settings from "./features/admin/page/settings.jsx";
 
 const router = createBrowserRouter([
   { path: "/", element: <Home /> },
@@ -33,6 +34,7 @@ const router = createBrowserRouter([
     path: "/menu",
     element: <MobileCategory />,
   },
+  { path: "/settings", element: <Settings /> },
 ]);
 
 createRoot(document.getElementById("root")).render(

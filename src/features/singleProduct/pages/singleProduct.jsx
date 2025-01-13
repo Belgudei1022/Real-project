@@ -28,7 +28,7 @@ const SingleProduct = () => {
       .then((res) => res.json())
       .then((data) => {
         setProductData([data]);
-        setRating(data.rating); 
+        setRating(data.rating);
       });
   }, [param.id]);
 
@@ -146,10 +146,10 @@ const SingleProduct = () => {
               <div className="w-full h-fit flex flex-col gap-[30px] border-t-[1px] rounded-t-[20px] bg-[#fff] py-[30px] px-[20px]">
                 <CostumizeColor />
                 <ShoeSize />
-                {productData.map((el) => {
+                {/* {productData.map((el) => {
                   return <Description key={el.id} data={el} />;
-                })}
-                <Information />
+                })} */}
+                {/* <Information /> */}
                 <div className="flex flex-col gap-[20px]">
                   <h1 className="font-medium text-[20px] text-start text-black">
                     Сэтгэгдэл
@@ -170,7 +170,7 @@ const SingleProduct = () => {
           </div>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 };
