@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Head from "./Nav/head";
+import Head from "../Nav/head";
 import CategoryName from "./categoryName";
 
 const MobileCategory = () => {
@@ -15,9 +15,9 @@ const MobileCategory = () => {
   }, []);
 
   return (
-    <div className="w-full h-screen flex flex-col gap-[50px] px-[10px] bg-white">
+    <div className="w-full h-screen flex flex-col gap-[10px]  ">
       <Head />
-      <div className="content w-full h-full flex flex-col gap-[30px]">
+      <div className="content w-full h-fit flex flex-col gap-[30px] px-[10px] py-[40px] rounded-xl bg-white">
         <h1 className="text-[24px] font-medium">Бүтээгдэхүүн</h1>
         <div className="menu flex flex-col gap-[5px] px-[10px]">
           {categoryData.map((el, index) => {

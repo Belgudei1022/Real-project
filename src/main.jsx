@@ -15,8 +15,9 @@ import WishList from "./features/wishList/pages/wishList.jsx";
 import Notification from "./features/notification/pages/notification.jsx";
 import Dashboard from "./features/admin/page/dashboard.jsx";
 import AddProduct from "./features/admin/page/addProduct.jsx";
-import MobileCategory from "./shared/components/mobileCategory.jsx";
+import MobileCategory from "./shared/components/category/mobileCategory.jsx";
 import Settings from "./features/admin/page/settings.jsx";
+import MobileMenu from "./shared/components/mobileMenu.jsx";
 
 const router = createBrowserRouter([
   { path: "/", element: <Home /> },
@@ -35,6 +36,7 @@ const router = createBrowserRouter([
     element: <MobileCategory />,
   },
   { path: "/settings", element: <Settings /> },
+  { path: "/mobilemenu", element: <MobileMenu /> },
 ]);
 
 createRoot(document.getElementById("root")).render(

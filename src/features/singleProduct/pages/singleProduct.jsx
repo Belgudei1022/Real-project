@@ -17,6 +17,7 @@ import Review from "../components/review";
 import { useParams } from "react-router";
 import Footer from "../../../shared/components/footer";
 import Image from "../components/image";
+import Layout from "../../../shared/components/layout";
 
 const SingleProduct = () => {
   const param = useParams();
@@ -33,145 +34,142 @@ const SingleProduct = () => {
   }, [param.id]);
 
   return (
-    <div className=" w-full h-fit flex flex-col bg-[#f6f6f6] ">
-      <div className="mobile w-full h-fit flex flex-col bg-[#f6f6f6] md:hidden">
-        <div className="w-full px-[10px] py-[20px] lg:px-[40px]">
-          <BackButton />
-        </div>
-        <div className="w-full h-fit flex justify-center items-center">
-          {productData.map((el) => {
-            return <Image key={el.id} data={el} />;
-          })}
-        </div>
-        <div className="w-full h-fit py-[30px]">
-          <div className="w-full h-fit flex px-[10px] py-[15px] ">
-            <div className="w-[300px]">
-              {productData.map((el) => {
-                return <Brand key={el.id} data={el} />;
-              })}
-              {productData.map((el) => {
-                return <Title key={el.id} data={el} />;
-              })}
-              <div className="flex flex-row items-center gap-[10px]">
-                <div className="flex flex-row items-center">
-                  {Array.from({ length: rating }, (_, i) => (
-                    <Rating key={i} />
-                  ))}
+    <Layout>
+      <div className=" w-full h-fit flex flex-col bg-[#f6f6f6] ">
+        <div className="mobile w-full h-fit flex flex-col bg-[#f6f6f6] md:hidden">
+          <div className="w-full px-[10px] py-[20px] lg:px-[40px]">
+            <BackButton />
+          </div>
+          <div className="w-full h-fit flex justify-center items-center">
+            {productData.map((el) => {
+              return <Image key={el.id} data={el} />;
+            })}
+          </div>
+          <div className="w-full h-fit py-[30px]">
+            <div className="w-full h-fit flex px-[10px] py-[15px] ">
+              <div className="w-[300px]">
+                {productData.map((el) => {
+                  return <Brand key={el.id} data={el} />;
+                })}
+                {productData.map((el) => {
+                  return <Title key={el.id} data={el} />;
+                })}
+                <div className="flex flex-row items-center gap-[10px]">
+                  <div className="flex flex-row items-center">
+                    {Array.from({ length: rating }, (_, i) => (
+                      <Rating key={i} />
+                    ))}
+                  </div>
+                  <h1 className="text-[#000]/20">(300,000)</h1>
                 </div>
-                <h1 className="text-[#000]/20">(300,000)</h1>
+              </div>
+            </div>
+            <div className="w-full h-fit px-[10px] py-[5px] flex flex-row justify-between items-end">
+              {productData.map((el) => {
+                return <Price key={el.id} data={el} />;
+              })}
+              <div className="buttons flex flex-col items-end gap-[10px]">
+                <WishButton />
+                <ToCartButton />
               </div>
             </div>
           </div>
-          <div className="w-full h-fit px-[10px] py-[5px] flex flex-row justify-between items-end">
+          <div className="w-full h-fit flex flex-col gap-[30px] border-t-[1px] rounded-t-[20px] bg-[#fff] py-[30px] px-[20px]">
+            <CostumizeColor />
+            <ShoeSize />
             {productData.map((el) => {
-              return <Price key={el.id} data={el} />;
+              return <Description key={el.id} data={el} />;
             })}
-            <div className="buttons flex flex-col items-end gap-[10px]">
-              <WishButton />
-              <ToCartButton />
+            <Information />
+            <div className="flex flex-row gap-[10px] overflow-x-auto">
+              {productData.map((el) => {
+                return el.reviews
+                  ? el.reviews.map((review, index) => (
+                      <OtherReviews key={index} data={review} />
+                    ))
+                  : null;
+              })}
             </div>
+            <Review />
           </div>
         </div>
-        <div className="w-full h-fit flex flex-col gap-[30px] border-t-[1px] rounded-t-[20px] bg-[#fff] py-[30px] px-[20px]">
-          <CostumizeColor />
-          <ShoeSize />
-          {productData.map((el) => {
-            return <Description key={el.id} data={el} />;
-          })}
-          <Information />
-          <div className="flex flex-row">
-            {productData.map((el) => {
-              return el.reviews
-                ? el.reviews.map((review, index) => (
-                    <OtherReviews key={index} data={review} />
-                  ))
-                : null;
-            })}
-          </div>
-          <Review />
-        </div>
-      </div>
-      <div className="desktop w-full h-fit flex-col items-center bg-[#f6f6f6] hidden md:flex ">
-        <div className="w-full">
-          <Head />
-          <Category />
-        </div>
-        <div className="content w-full max-w-[1440px] flex  flex-row  px-[10px] py-[20px]">
-          <div className="left w-1/2 flex flex-col gap-[20px] ">
+        <div className="desktop w-full h-fit flex-col items-center bg-[#f6f6f6] hidden md:flex ">
+          <div className="content w-full max-w-[1440px] flex  flex-row gap-[10px] px-[10px] py-[20px]">
+            <div className="left w-1/2 flex flex-col gap-[20px] ">
+              <div
+                className="image flex justify-center rounded-xl border-[1px] max-w-[500px] "
+                style={{ paddingTop: "50px" }}>
+                {productData.map((el) => {
+                  return <Image key={el.id} data={el} />;
+                })}
+              </div>
+              <div className="about border-[1px] flex flex-col gap-[20px] rounded-[20px] bg-[#fff] py-[30px] px-[20px] max-w-[500px]">
+                {productData.map((el) => {
+                  return <Description key={el.id} data={el} />;
+                })}
+                <Information />
+              </div>
+            </div>
             <div
-              className="image flex justify-center rounded-xl border-[1px] max-w-[500px] "
+              className="right w-1/2 flex flex-col gap-[20px]"
               style={{ paddingTop: "50px" }}>
-              {productData.map((el) => {
-                return <Image key={el.id} data={el} />;
-              })}
-            </div>
-            <div className="about border-[1px] flex flex-col gap-[20px] rounded-[20px] bg-[#fff] py-[30px] px-[20px] max-w-[500px]">
-              {productData.map((el) => {
-                return <Description key={el.id} data={el} />;
-              })}
-              <Information />
-            </div>
-          </div>
-          <div
-            className="right w-1/2 flex flex-col gap-[20px]"
-            style={{ paddingTop: "50px" }}>
-            <div className="w-full flex flex-col">
-              <div className="w-full h-fit flex flex-col px-[10px] py-[15px] ">
-                <div className="w-[300px]">
-                  {productData.map((el) => {
-                    return <Brand key={el.id} data={el} />;
-                  })}
-                  {productData.map((el) => {
-                    return <Title key={el.id} data={el} />;
-                  })}
-                  <div className="flex flex-row items-center gap-[10px]">
-                    <div className="flex flex-row items-center">
-                      {Array.from({ length: rating }, (_, i) => (
-                        <Rating key={i} />
-                      ))}
+              <div className="w-full flex flex-col">
+                <div className="w-full h-fit flex flex-col px-[10px] py-[15px] ">
+                  <div className="w-[300px]">
+                    {productData.map((el) => {
+                      return <Brand key={el.id} data={el} />;
+                    })}
+                    {productData.map((el) => {
+                      return <Title key={el.id} data={el} />;
+                    })}
+                    <div className="flex flex-row items-center gap-[10px]">
+                      <div className="flex flex-row items-center">
+                        {Array.from({ length: rating }, (_, i) => (
+                          <Rating key={i} />
+                        ))}
+                      </div>
+                      <h1 className="text-[#000]/20">(300,000)</h1>
                     </div>
-                    <h1 className="text-[#000]/20">(300,000)</h1>
+                  </div>
+                  <div className="w-full h-fit px-[10px] py-[5px] flex flex-row justify-between items-end">
+                    {productData.map((el) => {
+                      return <Price key={el.id} data={el} />;
+                    })}
+                    <div className="buttons flex flex-col items-end gap-[10px]">
+                      <WishButton />
+                      <ToCartButton />
+                    </div>
                   </div>
                 </div>
-                <div className="w-full h-fit px-[10px] py-[5px] flex flex-row justify-between items-end">
-                  {productData.map((el) => {
-                    return <Price key={el.id} data={el} />;
-                  })}
-                  <div className="buttons flex flex-col items-end gap-[10px]">
-                    <WishButton />
-                    <ToCartButton />
-                  </div>
-                </div>
-              </div>
-              <div className="w-full h-fit flex flex-col gap-[30px] border-t-[1px] rounded-t-[20px] bg-[#fff] py-[30px] px-[20px]">
-                <CostumizeColor />
-                <ShoeSize />
-                {/* {productData.map((el) => {
+                <div className="w-full h-fit flex flex-col gap-[30px] border-t-[1px] rounded-t-[20px] bg-[#fff] py-[30px] px-[20px]">
+                  <CostumizeColor />
+                  <ShoeSize />
+                  {/* {productData.map((el) => {
                   return <Description key={el.id} data={el} />;
                 })} */}
-                {/* <Information /> */}
-                <div className="flex flex-col gap-[20px]">
-                  <h1 className="font-medium text-[20px] text-start text-black">
-                    Сэтгэгдэл
-                  </h1>
-                  <div className="flex flex-row ">
-                    {productData.map((el) => {
-                      return el.reviews
-                        ? el.reviews.map((review, index) => (
-                            <OtherReviews key={index} data={review} />
-                          ))
-                        : null;
-                    })}
+                  {/* <Information /> */}
+                  <div className="flex flex-col gap-[20px]">
+                    <h1 className="font-medium text-[20px] text-start text-black">
+                      Сэтгэгдэл
+                    </h1>
+                    <div className="flex flex-row gap-[10px] overflow-auto ">
+                      {productData.map((el) => {
+                        return el.reviews
+                          ? el.reviews.map((review, index) => (
+                              <OtherReviews key={index} data={review} />
+                            ))
+                          : null;
+                      })}
+                    </div>
                   </div>
+                  <Review />
                 </div>
-                <Review />
               </div>
             </div>
           </div>
         </div>
       </div>
-      <Footer />
-    </div>
+    </Layout>
   );
 };
 

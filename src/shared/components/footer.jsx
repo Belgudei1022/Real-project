@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="footer bg-base-200 text-base-content p-10">
+    <footer className="footer bg-[#262626]  text-base-content p-10">
       <aside>
         <svg
           width="50"
@@ -18,8 +18,7 @@ const Footer = () => {
           J&B eCommerce
           <br />
           2025 оноос эхлэн үйл ажиллагаа явуулж байна.
-          <br/>
-            © 2025 J&B eCommerce. All rights reserved.
+          <br />© 2025 J&B eCommerce. All rights reserved.
         </p>
       </aside>
       <nav>

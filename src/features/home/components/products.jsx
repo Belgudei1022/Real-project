@@ -23,6 +23,10 @@ const Products = () => {
 
   const combinedProducts = [...contextProducts, ...productData];
 
+  const filteredData = (category) => {
+
+  };
+
   return (
     <div className="w-full h-fit grid grid-cols-2 justify-items-center content-center gap-[30px] lg:grid-cols-3 xl:grid-cols-4">
       {combinedProducts.map((el, index) => (

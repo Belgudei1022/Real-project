@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import DesktopCategory from "../desktopCategory";
-import FilteredProducts from "../../../features/home/components/filteredProducts";
+import DesktopCategory from "../category/desktopCategory";
+
 
 const Category = () => {
   const [category, setCategory] = useState([]);
@@ -12,7 +12,7 @@ const Category = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        setCategory(data.slice(0, 10));
+        setCategory(data.slice(0,7));
       });
   }, []);
 

@@ -2,7 +2,7 @@ import React from "react";
 
 const BackButton = () => {
   return (
-    <a href="./">
+    <a href="../">
       <button className="w-[32px] h-[32px] bg-[#fff] rounded-full flex justify-center items-center">
         <svg
           className="w-[20px] h-[20px]"

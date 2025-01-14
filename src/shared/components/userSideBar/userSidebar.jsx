@@ -32,7 +32,7 @@ const UserSidebar = () => {
   ]);
 
   return (
-    <div className="w-full h-full flex flex-col justify-between border-r-[1px] border-l-[1px] bg-white px-[20px] py-[120px]">
+    <div className="w-full h-full flex flex-col justify-between border-r-[1px] border-l-[1px] md:bg-white px-[40px] py-[120px]">
       <div className="w-fit flex flex-col gap-[20px]">
         {userButtonData.map((el) => {
           return <UserButton key={el.link} data={el} />;
@@ -40,7 +40,7 @@ const UserSidebar = () => {
       </div>
       <div className="w-full h-fit">
         <Link to={"/login"}>
-          <button className="flex flex-row gap-[20px]">
+          <button className="flex flex-row gap-[20px] w-[300px] bg-white px-[15px] py-[10px] rounded-lg">
             <img src="/src/assets/leave-svgrepo-com.svg" alt="" />
             <h1>Гарах</h1>
           </button>

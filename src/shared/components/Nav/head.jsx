@@ -34,16 +34,32 @@ const Head = () => {
           />
         </Link>
         <div className="buttons flex flex-row gap-[10px]">
-          <SearchComponent />
+          {/* <SearchComponent /> */}
           {button.map((el, index) => (
-            <Link
-              to={el.link}
-              key={index}
-              className={el.name === "Menu" ? "flex md:hidden" : ""}>
-              <button className="w-[32px] h-[32px] flex items-center justify-center rounded-full bg-white">
-                <img src={el.img} alt={el.name} />
-              </button>
-            </Link>
+            <React.Fragment key={index}>
+              {el.name === "User" ? (
+                <>
+                  <Link to="/userinformation" className="hidden md:block">
+                    <button className="w-[32px] h-[32px] flex items-center justify-center rounded-full bg-white p-[6px]">
+                      <img src={el.img} alt={el.name} />
+                    </button>
+                  </Link>
+                  <Link to="/mobilemenu" className="block md:hidden">
+                    <button className="w-[32px] h-[32px] flex items-center justify-center rounded-full bg-white p-[6px]">
+                      <img src={el.img} alt={el.name} />
+                    </button>
+                  </Link>
+                </>
+              ) : (
+                <Link
+                  to={el.link}
+                  className={el.name === "Menu" ? "flex md:hidden" : ""}>
+                  <button className="w-[32px] h-[32px] flex items-center justify-center rounded-full bg-white p-[6px]">
+                    <img src={el.img} alt={el.name} />
+                  </button>
+                </Link>
+              )}
+            </React.Fragment>
           ))}
         </div>
       </div>
