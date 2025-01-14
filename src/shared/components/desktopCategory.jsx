@@ -32,7 +32,7 @@ const DesktopCategory = () => {
   return (
     <div
       ref={ref}
-      className="w-[500px] h-screen border-[1px] fixed bg-white top-0 left-0 z-10 px-[20px] py-[30px]">
+      className="w-[500px] h-screen border-[1px] fixed bg-white top-0 left-0 z-10 px-[50px] py-[30px]">
       <div className="w-full h-full flex flex-col gap-[5px] justify-start">
         {categoryData.map((el, index) => {
           return <CategoryNameDesktop key={index} data={el} />;

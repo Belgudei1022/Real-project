@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import DesktopCategory from "../desktopCategory";
+import FilteredProducts from "../../../features/home/components/filteredProducts";
 
 const Category = () => {
   const [category, setCategory] = useState([]);
@@ -18,6 +19,9 @@ const Category = () => {
   const toggleDesktopCategory = () => {
     setIsDesktopCategoryVisible(!isDesktopCategoryVisible);
   };
+  const filter = ()=>{
+    
+  }
 
   return (
     <div className="w-full h-[50px] bg-white flex-row gap-[20px] hidden md:flex border-b-[1px] border-t-[1px] justify-center px-[10px]">
@@ -30,7 +34,7 @@ const Category = () => {
         </button>
         {category.map((el, index) => {
           return (
-            <button key={index} className="">
+            <button key={index} >
               <p>{el.name}</p>
             </button>
           );

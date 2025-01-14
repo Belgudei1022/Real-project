@@ -2,12 +2,19 @@ import React from 'react';
 
 const Order = () => {
     return (
-      <div className="bg-white flex items-center justify-around gap-8 shadow rounded-lg md:h-[352px] md:w-auto">
-        <div className="flex justify-between flex-col p-[30px] gap-8">
-          <div className="text-2xl font-semibold">Нийт захиалга</div>
-          <div className="stat-value">8,400</div>
-          <div className="text-gray-600">Өмнөх сараас 21% өссөн</div>
+      <div className="bg-white flex justify-between items-center rounded-xl p-8 border shadow-lg w-[400px]">
+        <div className="flex flex-col">
+          <h1>Шинэ бүтээгдэхүүн</h1>
+          <span className="text-3xl font-bold">437</span>
+          <span className="text-sm text-red-500">
+            Өмнөх сараас 7% хувь буурсан.
+          </span>
         </div>
+        <img
+          src="src\assets\product-svgrepo-com (3).svg"
+          alt=""
+          className="w-[35px]"
+        />
       </div>
     );
 }

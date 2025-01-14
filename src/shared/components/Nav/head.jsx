@@ -28,26 +28,24 @@ const Head = () => {
       <div className="content w-full max-w-[1440px] flex flex-row justify-between items-center">
         <Link to="/">
           <img
-            src="/src/assets/Screenshot_2025-01-06_210416-removebg-preview (1).png"
+            src="https://res-console.cloudinary.com/dlfvuaspc/media_explorer_thumbnails/d42333a27eedbac0f1527537560b0dc2/detailed"
             alt="Logo"
             className="w-auto h-[35px]"
           />
         </Link>
         <div className="buttons flex flex-row gap-[10px]">
-          <SearchComponent/>
+          <SearchComponent />
           {button.map((el, index) => (
             <Link
               to={el.link}
               key={index}
-              className={el.name === "Menu" ? "flex md:hidden" : ""}
-            >
+              className={el.name === "Menu" ? "flex md:hidden" : ""}>
               <button className="w-[32px] h-[32px] flex items-center justify-center rounded-full bg-white">
                 <img src={el.img} alt={el.name} />
               </button>
             </Link>
           ))}
         </div>
-        
       </div>
     </div>
   );

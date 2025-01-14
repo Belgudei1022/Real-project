@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Head from "../../../shared/components/Nav/head";
 import Category from "../../../shared/components/Nav/category";
 import BackButton from "../../../shared/components/back-button";
-import Image from "../components/Image";
 import Brand from "../components/brand";
 import Title from "../components/title";
 import Rating from "../components/rating";
@@ -17,6 +16,7 @@ import OtherReviews from "../components/otherReviews";
 import Review from "../components/review";
 import { useParams } from "react-router";
 import Footer from "../../../shared/components/footer";
+import Image from "../components/image";
 
 const SingleProduct = () => {
   const param = useParams();
@@ -28,7 +28,7 @@ const SingleProduct = () => {
       .then((res) => res.json())
       .then((data) => {
         setProductData([data]);
-        setRating(data.rating); 
+        setRating(data.rating);
       });
   }, [param.id]);
 
@@ -146,10 +146,10 @@ const SingleProduct = () => {
               <div className="w-full h-fit flex flex-col gap-[30px] border-t-[1px] rounded-t-[20px] bg-[#fff] py-[30px] px-[20px]">
                 <CostumizeColor />
                 <ShoeSize />
-                {productData.map((el) => {
+                {/* {productData.map((el) => {
                   return <Description key={el.id} data={el} />;
-                })}
-                <Information />
+                })} */}
+                {/* <Information /> */}
                 <div className="flex flex-col gap-[20px]">
                   <h1 className="font-medium text-[20px] text-start text-black">
                     Сэтгэгдэл
@@ -170,7 +170,7 @@ const SingleProduct = () => {
           </div>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 };

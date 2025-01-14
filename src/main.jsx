@@ -30,8 +30,11 @@ const router = createBrowserRouter([
   { path: "/notification", element: <Notification /> },
   { path: "/dashboard", element: <Dashboard /> },
   { path: "/addProduct", element: <AddProduct /> },
-  {path: "/menu", element: <MobileCategory />},
-  { path: "/settings", element: <Settings />}
+  { path: "/settings", element: <Settings /> },
+  {
+    path: "/menu",
+    element: <MobileCategory />,
+  },
 ]);
 
 createRoot(document.getElementById("root")).render(

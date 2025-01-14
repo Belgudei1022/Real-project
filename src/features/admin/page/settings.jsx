@@ -23,9 +23,9 @@ const Settings = () => {
   return (
     <Layout>
       <div className="mt-36 p-[30px] lg:mt-4 lg:absolute lg:right-4 lg:w-5/6">
-        <h2>Settings</h2>
-        <form>
-          <div style={{ marginBottom: "15px" }}>
+        <h2 className="text-2xl font-semibold px-8">Settings</h2>
+        <form className="p-8">
+          <div style={{ marginBottom: "15px" }} className="flex flex-col">
             <label htmlFor="username">Username</label>
             <input
               type="text"
@@ -33,16 +33,19 @@ const Settings = () => {
               name="username"
               value={settings.username}
               onChange={handleInputChange}
+              className="rounded-xl"
               style={{
-                width: "100%",
+                width: "300px",
+                border: "1px solid black",
                 padding: "8px",
                 marginTop: "5px",
+                backgroundColor: "white",
                 color: "#BCC0C0",
               }}
             />
           </div>
 
-          <div style={{ marginBottom: "15px" }}>
+          <div style={{ marginBottom: "15px" }} className="flex flex-col">
             <label htmlFor="email">Email</label>
             <input
               type="email"
@@ -50,8 +53,11 @@ const Settings = () => {
               name="email"
               value={settings.email}
               onChange={handleInputChange}
+              className="rounded-xl"
               style={{
-                width: "100%",
+                width: "300px",
+                border: "1px solid black",
+                backgroundColor: "white",
                 padding: "8px",
                 marginTop: "5px",
                 color: "#BCC0C0",

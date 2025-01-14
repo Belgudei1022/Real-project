@@ -3,26 +3,13 @@ import React from "react";
 
 const Stats = () => {
   return (
-    <div className="flex gap-4 bg-white rounded-xl  w-[30vh] lg:w-[30vh] items-center justify-center">
-      <div className="shadow  py-2  rounded-lg flex flex-wrap text-start justify-center ">
-        <div className="stat flex justify-center flex-col">
-          <div className="stat-title">Нэвтэрсэн</div>
-          <div className="stat-value">21K</div>
-          <div className="stat-desc">2025 оноос хойш</div>
-        </div>
-
-        <div className="stat">
-          <div className="stat-title">Хэрэглэгч</div>
-          <div className="stat-value text-secondary">4,200</div>
-          <div className="stat-desc text-secondary">↗︎ 40 (2%)</div>
-        </div>
-
-        <div className="stat">
-          <div className="stat-title">Шинээр бүртгүүлсэн</div>
-          <div className="stat-value">1,200</div>
-          <div className="stat-desc">↘︎ 90 (14%)</div>
-        </div>
+    <div className="bg-white flex justify-between items-center rounded-xl p-8 shadow-lg w-[400px]">
+      <div className="flex flex-col">
+        <h1>Шинэ хэрэглэгч</h1>
+        <span className="text-3xl font-bold">737</span>
+        <span className="text-sm text-green-500">Өмнөх сараас 93-р өссөн</span>
       </div>
+        <img src="src\assets\ser-circle-svgrepo-com (1).svg" alt="" className="w-[35px]" />
     </div>
   );
 };

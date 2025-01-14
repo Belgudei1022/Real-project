@@ -51,7 +51,7 @@ const Sidebar = () => {
             </li>
             <li className="logo flex flex-row items-center">
               <img src="src/assets/sign-out-alt-svgrepo-com.svg" alt="" />
-              <a href="#">Logout</a>
+              <a href="/login">Logout</a>
             </li>
           </ul>
         </div>
