@@ -6,19 +6,30 @@ const Search = () => {
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
   const [items, setItems] = useState([]);
 
-  // Fetch data once when the component mounts
   useEffect(() => {
     fetch("https://dummyjson.com/products")
       .then((res) => res.json())
       .then((data) => {
-        setItems(data.products || []); // Ensure items is set safely
+        setItems(data.products || []);
       })
       .catch((error) => console.error("Error fetching products:", error));
   }, []);
 
   const handleSearch = (e) => {
-    setSearchTerm(e.target.value);
-    setIsDropdownVisible(e.target.value.trim() !== "");
+    const query = e.target.value;
+    setSearchTerm(query);
+    setIsDropdownVisible(query.trim() !== "");
+
+    if (query.trim() !== "") {
+      fetch(`https://dummyjson.com/products/search?q=${query}`)
+        .then((res) => res.json())
+        .then((data) => {
+          setItems(data.products || []);
+        })
+        .catch((error) => console.error("Error fetching products:", error));
+    } else {
+      setItems([]);
+    }
   };
 
   const filteredItems = items.filter(
@@ -28,7 +39,11 @@ const Search = () => {
   );
 
   return (
-    <div className="relative flex w-full items-center justify-between gap-8">
+    <div
+      className="relative flex w-full items-center justify-between gap-8"
+      onMouseEnter={() => setIsDropdownVisible(true)}
+      onMouseLeave={() => setIsDropdownVisible(false)}
+    >
       <div className="relative w-full max-w-[400px] flex gap-8">
         <input
           type="text"
@@ -62,12 +77,21 @@ const Search = () => {
               </li>
             ))
           ) : (
-            <li className="px-4 py-2 text-gray-500">Oлдсонгүй</li>
+            <li className="px-4 py-2 text-gray-500">No results found</li>
           )}
         </ul>
       )}
     </div>
   );
+};
+
+Search.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      category: PropTypes.string.isRequired,
+    })
+  ),
 };
 
 export default Search;
