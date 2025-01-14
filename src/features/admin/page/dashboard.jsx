@@ -4,30 +4,37 @@ import DoughnutChart from "../componets/dashboard/doughnutChart";
 import Layout from "../componets/layout";
 import Order from "../componets/dashboard/order";
 import Profit from "../componets/dashboard/profit";
-import { Link } from "react-router";
+// import { Link } from "react-router";
+import LineChart from "../componets/dashboard/lineChart";
 
 const Dashboard = () => {
   return (
-    <Link to={"/dashboard"}>
-      <div>
-        <Layout>
-          <div>
-            <div
-              className="p-[30px] my-36  flex flex-col w-full gap-8 lg:h-fit lg:absolute lg:ml-[50px] lg:right-0
-           lg:w-5/6 lg:my-[50px] lg:flex-row"
-            >
-              <div className="flex flex-col gap-8 items-center  md:flex-row lg:flex-col">
-                <Stats />
-                <Profit />
-                <Order />
-              </div>
-              <DoughnutChart />
-            </div>
+    <div>
+      <Layout>
+        <div
+          className="py-[50px] my-40 flex flex-col w-full px-[20px] lg:px-[90px] gap-6 lg:h-fit lg:absolute lg:ml-[50px] lg:right-0
+           lg:w-5/6 lg:my-[50px]"
+        >
+          <h1 className="text-2xl font-semibold lg:text-3xl lg:font-bold ">
+            Сайн байна уу, <br />
+            <span className=" text-lg font-normal">
+              Эрхэм Админ хэн нэгэн. Таньд{" "}
+              <span className="font-semibold">J&B</span> онлайн дэлгүүрийн
+              статистик үзүүлэлтийг харуулж байна.
+            </span>
+          </h1>
+          <div className="flex flex-wrap justify-between gap-4 md:flex-nowrap">
+            <Stats />
+            <Profit />
+            <Order />
           </div>
-        </Layout>
-      </div>
-      
-    </Link>
+          <div className="flex flex-col gap-8 lg:flex-row">
+            <LineChart  />
+            <DoughnutChart  />
+          </div>
+        </div>
+      </Layout>
+    </div>
   );
 };
 

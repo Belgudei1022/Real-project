@@ -27,8 +27,11 @@ const AddProduct = () => {
 
   return (
     <Layout>
-      <div className="p-[30px] my-36 flex flex-col w-full gap-8 lg:my-6 lg:px-52 lg:h-fit lg:right-1 lg:absolute lg:w-5/6">
-        <h1 className="font-bold text-2xl">Бүтээгдэхүүн нэмэх</h1>
+      <div className="p-[30px] my-36 flex flex-col justify-center items-start w-full gap-8 lg:my-6 lg:px-52 lg:h-fit lg:right-1 lg:absolute lg:w-5/6">
+        <div className="flex gap-4 items-end">
+          <h1 className="font-bold text-3xl">Бүтээгдэхүүн</h1>
+          <span className="text-slate-300">Шинэ бүтээгдэхүүн нэмэх</span>
+        </div>
         <ProducrtAddCard onAddProduct={addProduct} />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {products.map((product, index) => (

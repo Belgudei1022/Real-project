@@ -7,7 +7,7 @@ const Layout = ({children}) => {
         <nav>
           <Sidebar />
         </nav>
-        <main className="w-[100%] h-[100%]">{children}</main>
+        <main className="w-[100%] h-[100%] bg-[#f6f6f6]">{children}</main>
       </div>
     );
 }

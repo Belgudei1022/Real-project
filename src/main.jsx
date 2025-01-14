@@ -31,11 +31,12 @@ const router = createBrowserRouter([
   { path: "/notification", element: <Notification /> },
   { path: "/dashboard", element: <Dashboard /> },
   { path: "/addProduct", element: <AddProduct /> },
+  { path: "/settings", element: <Settings /> },
   {
     path: "/menu",
     element: <MobileCategory />,
   },
-  { path: "/settings", element: <Settings /> },
+
   { path: "/mobilemenu", element: <MobileMenu /> },
 ]);
 

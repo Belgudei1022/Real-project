@@ -48,12 +48,11 @@ const DoughnutChart = () => {
   };
 
   return (
-    <div className="flex flex-col bg-white gap-8 w-full border-2 shadow rounded-lg p-16 items-center md:flex-row lg:w-[100vh]">
-      {/* <h1 className="text-xl font-bold">Нийт зарагдсан бараа</h1> */}
-      <div className=" lg:w-2/3">
+    <div className="flex flex-col bg-white gap-8 w-full lg:w-1/2 border-2 shadow rounded-lg p-16 items-center md:flex-row shadow-lg ">
+      <div className="w-[100%] lg:w-2/3">
         <Doughnut data={data} options={options} />
       </div>
-      <div className="w-full flex flex-wrap gap-2 md:flex-col md:flex-nowrap lg:w-1/3">
+      <div className="w-full flex flex-col gap-2 md:flex-row md:flex-col lg:flex-col lg:w-1/3">
         <h1 className="text-xl font-bold">Нийт зарагдсан бараа</h1>
         {data.labels.map((label, index) => (
           <div key={index} className="flex items-center gap-2">
