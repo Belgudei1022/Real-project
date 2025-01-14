@@ -1,9 +1,9 @@
 import React from "react";
-import WishButton from "../../../shared/components/wishButton";
 import PlusButton from "../../../shared/components/plusButton";
+import DeleteButton from "../../../shared/components/deleteButton";
 import { Link } from "react-router-dom";
 
-const ProductCard = ({ el, wishHandle }) => {
+const WishCard = ({ el, onDelete }) => {
   if (!el) return null;
 
   const { id, images, title, price, rating } = el;
@@ -14,7 +14,7 @@ const ProductCard = ({ el, wishHandle }) => {
       className="product w-[190px] h-[220px] border-[1px] rounded-3xl flex flex-col justify-between relative md:w-[300px] md:h-[350px]">
       <Link to={`/product/${id}`}>
         <img
-          src={images[0]} // Use the first image from the array
+          src={images[0]}
           alt={title}
           className="w-full h-full rounded-3xl p-4 object-contain"
         />
@@ -30,11 +30,11 @@ const ProductCard = ({ el, wishHandle }) => {
         {rating} <img src="/src/assets/Star.png" alt="star" />
       </p>
       <div className="buttons absolute bottom-[10px] right-[15px] flex flex-col gap-[7px]">
-        <WishButton wishHandle={() => wishHandle(el)} />
+        <DeleteButton onDelete={() => onDelete(el.id)} />
         <PlusButton />
       </div>
     </div>
   );
 };
 
-export default ProductCard;
+export default WishCard;

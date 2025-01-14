@@ -1,8 +1,10 @@
 import React from "react";
 
-const WishButton = () => {
+const WishButton = ({ wishHandle }) => {
   return (
-    <button className="h-[32px] w-[32px] rounded-full bg-[#fff]/50 flex justify-center items-center">
+    <button
+      className="h-[32px] w-[32px] rounded-full border-[1px] bg-[#fff]/50 flex justify-center items-center"
+      onClick={wishHandle}>
       <svg
         className="w-[20px] h-[20px]"
         viewBox="-0.5 0 25 25"

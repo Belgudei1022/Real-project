@@ -23,6 +23,7 @@ const SingleProduct = () => {
   const param = useParams();
   const [productData, setProductData] = useState([]);
   const [rating, setRating] = useState(0);
+  const [wishData, setWishData] = useState([]);
 
   useEffect(() => {
     fetch(`https://dummyjson.com/products/${param.id}`)
@@ -32,6 +33,22 @@ const SingleProduct = () => {
         setRating(data.rating);
       });
   }, [param.id]);
+
+  const handleWish = () => {
+    const wishArr = JSON.parse(localStorage.getItem("wish")) || []; 
+    const wishItem = productData[0]; 
+
+    if (wishArr.some((item) => item.id === wishItem.id)) {
+      alert("This item is already in your wishlist!");
+      return;
+    }
+
+    const updatedWishList = [...wishArr, wishItem];
+
+    localStorage.setItem("wish", JSON.stringify(updatedWishList));
+
+    setWishData(updatedWishList);
+  };
 
   return (
     <Layout>
@@ -69,7 +86,7 @@ const SingleProduct = () => {
                 return <Price key={el.id} data={el} />;
               })}
               <div className="buttons flex flex-col items-end gap-[10px]">
-                <WishButton />
+                <WishButton wishHandle={handleWish} />
                 <ToCartButton />
               </div>
             </div>
@@ -136,7 +153,7 @@ const SingleProduct = () => {
                       return <Price key={el.id} data={el} />;
                     })}
                     <div className="buttons flex flex-col items-end gap-[10px]">
-                      <WishButton />
+                      <WishButton wishHandle={handleWish} />
                       <ToCartButton />
                     </div>
                   </div>

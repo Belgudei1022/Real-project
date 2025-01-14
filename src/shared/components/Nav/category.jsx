@@ -11,7 +11,7 @@ const Category = () => {
     fetch("https://dummyjson.com/products/categories")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setCategory(data.slice(0,7));
       });
   }, []);
