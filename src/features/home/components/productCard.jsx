@@ -14,9 +14,9 @@ const ProductCard = ({ el, wishHandle }) => {
       className="product w-[190px] h-[220px] border-[1px] rounded-3xl flex flex-col justify-between relative md:w-[300px] md:h-[350px]">
       <Link to={`/product/${id}`}>
         <img
-          src={images[0]} // Use the first image from the array
+          src={images[0]} 
           alt={title}
-          className="w-full h-full rounded-3xl p-4 object-contain"
+          className="w-full h-full rounded-3xl p-4 object-contain "
         />
       </Link>
 

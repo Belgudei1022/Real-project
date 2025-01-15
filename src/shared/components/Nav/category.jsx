@@ -19,6 +19,11 @@ const Category = () => {
   const toggleDesktopCategory = () => {
     setIsDesktopCategoryVisible(!isDesktopCategoryVisible);
   };
+
+  const closeDesktopCategory = () => {
+    setIsDesktopCategoryVisible(false);
+  };
+
   const filter = ()=>{
     
   }
@@ -40,7 +45,9 @@ const Category = () => {
           );
         })}
       </div>
-      {isDesktopCategoryVisible && <DesktopCategory />}
+      {isDesktopCategoryVisible && (
+        <DesktopCategory isVisible={isDesktopCategoryVisible} onClose={closeDesktopCategory} />
+      )}
     </div>
   );
 };
