@@ -2,7 +2,7 @@ import React from "react";
 
 const NoWish = () => {
   return (
-    <div className="flex flex-col items-center gap-[20px]">
+    <div className="w-full h-full justify-center flex flex-col items-center gap-[20px]">
       <img
         src="/src/assets/heart-alt-svgrepo-com.svg"
         alt=""

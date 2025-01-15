@@ -20,16 +20,23 @@ import Image from "../components/image";
 import Layout from "../../../shared/components/layout";
 
 const SingleProduct = () => {
-  const { id } = useParams();
-  const [productData, setProductData] = useState(null);
+  const param = useParams();
+  const [productData, setProductData] = useState([]);
+  const [rating, setRating] = useState(0);
 
   useEffect(() => {
-    if (id) {
-      fetch(`https://dummyjson.com/products/${id}`)
-        .then((res) => res.json())
-        .then((data) => setProductData(data));
-    }
-  }, [id]);
+    fetch(`https://dummyjson.com/products/${param.id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setProductData([data]);
+        setRating(data.rating);
+      });
+  }, [param.id]);
+
+  //  const param = useParams();
+  //  const [productData, setProductData] = useState([]);
+  //  const [rating, setRating] = useState(0);
+  //  const [wishData, setWishData] = useState([]);
 
   return (
     <Layout>
@@ -67,7 +74,7 @@ const SingleProduct = () => {
                 return <Price key={el.id} data={el} />;
               })}
               <div className="buttons flex flex-col items-end gap-[10px]">
-                <WishButton />
+                <WishButton wishHandle={handleWish} />
                 <ToCartButton />
               </div>
             </div>
@@ -136,7 +143,7 @@ const SingleProduct = () => {
                       return <Price key={el.id} data={el} />;
                     })}
                     <div className="buttons flex flex-col items-end gap-[10px]">
-                      <WishButton />
+                      <WishButton wishHandle={handleWish} />
                       <ToCartButton />
                     </div>
                   </div>

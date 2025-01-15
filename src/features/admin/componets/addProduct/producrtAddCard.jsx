@@ -86,13 +86,6 @@ const ProducrtAddCard = ({ onAddProduct }) => {
               onChange={handleChange}
             />
           </div>
-          {formData.images && (
-            <img
-              src={formData.images}
-              alt="Product"
-              className="w-32 h-32 object-cover"
-            />
-          )}
           <div className="flex bg-white border-2 p-2 add">
             <img src="src\assets\information-square-svgrepo-com.svg" alt="" />
             <input
@@ -136,8 +129,7 @@ const ProducrtAddCard = ({ onAddProduct }) => {
             <img src="src\assets\product-svgrepo-com (3).svg" alt="" />
             <input
               type="text"
-              name="title"
-              value={formData.title}
+              value={formData.discountPercentage}
               placeholder="Байршил"
               className="input w-full max-w-xs bg-white lg:w-screen"
               onChange={handleChange}
@@ -147,8 +139,7 @@ const ProducrtAddCard = ({ onAddProduct }) => {
             <img src="src\assets\price-svgrepo-com.svg" alt="" />
             <input
               type="text"
-              name="price"
-              value={formData.price}
+              value={formData.stock}
               placeholder="Бар кодийн төрөл"
               className="input w-full max-w-xs bg-white lg:w-screen"
               onChange={handleChange}
@@ -158,8 +149,7 @@ const ProducrtAddCard = ({ onAddProduct }) => {
             <img src="src\assets\image-square-svgrepo-com.svg" alt="" />
             <input
               type="text"
-              name="images"
-              value={formData.images}
+              value={formData.weight}
               placeholder="Жин (кг)"
               className="input w-full max-w-xs bg-white lg:w-screen"
               onChange={handleChange}
@@ -169,8 +159,7 @@ const ProducrtAddCard = ({ onAddProduct }) => {
             <img src="src\assets\information-square-svgrepo-com.svg" alt="" />
             <input
               type="text"
-              name="description"
-              value={formData.description}
+              value={formData.width}
               placeholder="Өргөн"
               className="input w-full max-w-xs bg-white lg:w-screen"
               onChange={handleChange}
@@ -180,8 +169,7 @@ const ProducrtAddCard = ({ onAddProduct }) => {
             <img src="src\assets\category-svgrepo-com.svg" alt="" />
             <input
               type="text"
-              name="category"
-              value={formData.category}
+              value={formData.height}
               placeholder="Өндөр"
               className="input w-full max-w-xs bg-white lg:w-screen"
               onChange={handleChange}

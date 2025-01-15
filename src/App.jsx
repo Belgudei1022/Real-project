@@ -1,24 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
-import UserInformation from "./features/userInformation/pages/userInformation";
+import WishCard from "./features/wishList/components/wishCard";
 
 function App() {
-  const [test, setTest] = useState([]);
+  // Sample product data
+  const mockProduct = {
+    id: 1,
+    images: ["https://via.placeholder.com/150"], // Sample image URL
+    title: "Sample Product",
+    price: 19.99,
+    rating: 4.5,
+  };
 
-  useEffect(() => {
-    fetch("https://dummyjson.com/products/category/beauty")
-      .then((res) => res.json())
-      .then((data) => {
-        // console.log(data);
-        setTest(data);
-      });
-  });
-  console.log(test);
+  // Wishlist handler
+  const handleWish = (item) => {
+    console.log("Added to wishlist:", item);
+  };
 
   return (
-    <>
-      <UserInformation />
-    </>
+    <div className="App">
+      <WishCard el={mockProduct} wishHandle={handleWish} />
+    </div>
   );
 }
 
