@@ -1,8 +1,6 @@
 import React from "react";
-import Head from "../../../shared/components/Nav/head";
 import Category from "../../../shared/components/Nav/category";
 import Main from "../components/main";
-import Footer from "../../../shared/components/footer";
 import Layout from "../../../shared/components/layout";
 
 const Home = () => {

@@ -20,22 +20,20 @@ import Image from "../components/image";
 import Layout from "../../../shared/components/layout";
 
 const SingleProduct = () => {
-  const param = useParams();
-  const [productData, setProductData] = useState([]);
-  const [rating, setRating] = useState(0);
+  const { id } = useParams();
+  const [productData, setProductData] = useState(null);
 
   useEffect(() => {
-    fetch(`https://dummyjson.com/products/${param.id}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setProductData([data]);
-        setRating(data.rating);
-      });
-  }, [param.id]);
+    if (id) {
+      fetch(`https://dummyjson.com/products/${id}`)
+        .then((res) => res.json())
+        .then((data) => setProductData(data));
+    }
+  }, [id]);
 
   return (
     <Layout>
-      <div className=" w-full h-fit flex flex-col bg-[#f6f6f6] ">
+      <div className=" w-full h-fit flex flex-col bg-[#f6f6f6]">
         <div className="mobile w-full h-fit flex flex-col bg-[#f6f6f6] md:hidden">
           <div className="w-full px-[10px] py-[20px] lg:px-[40px]">
             <BackButton />
@@ -98,7 +96,8 @@ const SingleProduct = () => {
             <div className="left w-1/2 flex flex-col gap-[20px] ">
               <div
                 className="image flex justify-center rounded-xl border-[1px] max-w-[500px] "
-                style={{ paddingTop: "50px" }}>
+                style={{ paddingTop: "50px" }}
+              >
                 {productData.map((el) => {
                   return <Image key={el.id} data={el} />;
                 })}
@@ -112,7 +111,8 @@ const SingleProduct = () => {
             </div>
             <div
               className="right w-1/2 flex flex-col gap-[20px]"
-              style={{ paddingTop: "50px" }}>
+              style={{ paddingTop: "50px" }}
+            >
               <div className="w-full flex flex-col">
                 <div className="w-full h-fit flex flex-col px-[10px] py-[15px] ">
                   <div className="w-[300px]">

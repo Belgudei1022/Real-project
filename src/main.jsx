@@ -18,6 +18,7 @@ import AddProduct from "./features/admin/page/addProduct.jsx";
 import MobileCategory from "./shared/components/category/mobileCategory.jsx";
 import Settings from "./features/admin/page/settings.jsx";
 import MobileMenu from "./shared/components/mobileMenu.jsx";
+import SearchProduct from "./features/singleProduct/pages/searchProduct.jsx";
 
 const router = createBrowserRouter([
   { path: "/", element: <Home /> },
@@ -32,12 +33,9 @@ const router = createBrowserRouter([
   { path: "/dashboard", element: <Dashboard /> },
   { path: "/addProduct", element: <AddProduct /> },
   { path: "/settings", element: <Settings /> },
-  {
-    path: "/menu",
-    element: <MobileCategory />,
-  },
-
+  { path: "/menu", element: <MobileCategory /> },
   { path: "/mobilemenu", element: <MobileMenu /> },
+  { path: "/search/:keyword", element: <SearchProduct /> },
 ]);
 
 createRoot(document.getElementById("root")).render(
