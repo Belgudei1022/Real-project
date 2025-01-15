@@ -36,6 +36,7 @@ const router = createBrowserRouter([
   { path: "/menu", element: <MobileCategory /> },
   { path: "/mobilemenu", element: <MobileMenu /> },
   { path: "/search/:keyword", element: <SearchProduct /> },
+  { path: "/test", element: <App /> },
 ]);
 
 createRoot(document.getElementById("root")).render(
