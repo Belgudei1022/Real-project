@@ -12,10 +12,10 @@ const CartItem = ({ el }) => {
       </div>
       <div className="price flex flex-col items-end gap-[10px]">
         <h1 className="text-[24px]">$ {el.price}</h1>
-        
-        <p className="w-[32px] h-[32px] border border-black/60 rounded-lg flex items-center justify-center text-[18px] ">
+        <input type="text" value={el.count} className="w-[32px] h-[32px] border border-black/60 rounded-lg bg-white flex items-center justify-center text-[18px] " />
+        {/* <p className="w-[32px] h-[32px] border border-black/60 rounded-lg flex items-center justify-center text-[18px] ">
           {el.count}
-        </p>
+        </p> */}
       </div>
     </div>
   );
