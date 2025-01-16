@@ -2,7 +2,7 @@ import React from 'react';
 
 const NoItem = () => {
     return (
-        <div className='flex flex-col items-center gap-[20px]'>
+        <div className='w-full h-full flex flex-col items-center justify-center gap-[20px]'>
             <img
           src="/src/assets/cart-svgrepo-com.svg"
           alt=""

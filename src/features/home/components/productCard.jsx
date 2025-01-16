@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import WishButton from "../../../shared/components/wishButton";
 import PlusButton from "../../../shared/components/plusButton";
 import { Link } from "react-router-dom";
+import cartContext from "../../cart/hooks/cartContext";
 
 const ProductCard = ({ el, wishHandle }) => {
   if (!el) return null;
 
   const { id, images, title, price, rating } = el;
+
+  const { addToCart } = useContext(cartContext);
 
   return (
     <div
@@ -14,7 +17,7 @@ const ProductCard = ({ el, wishHandle }) => {
       className="product w-[190px] h-[220px] border-[1px] rounded-3xl flex flex-col justify-between relative md:w-[300px] md:h-[350px]">
       <Link to={`/product/${id}`}>
         <img
-          src={images[0]} 
+          src={images[0]}
           alt={title}
           className="w-full h-full rounded-3xl p-4 object-contain "
         />
@@ -31,7 +34,7 @@ const ProductCard = ({ el, wishHandle }) => {
       </p>
       <div className="buttons absolute bottom-[10px] right-[15px] flex flex-col gap-[7px]">
         <WishButton wishHandle={() => wishHandle(el)} />
-        <PlusButton />
+        <PlusButton addToCart={() => addToCart(el)} />
       </div>
     </div>
   );

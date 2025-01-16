@@ -19,6 +19,7 @@ import MobileCategory from "./shared/components/category/mobileCategory.jsx";
 import Settings from "./features/admin/page/settings.jsx";
 import MobileMenu from "./shared/components/mobileMenu.jsx";
 import SearchProduct from "./features/singleProduct/pages/searchProduct.jsx";
+import CartProvider from "./features/cart/hooks/cartProvider.jsx";
 
 const router = createBrowserRouter([
   { path: "/", element: <Home /> },
@@ -41,8 +42,10 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <ProductProvider>
-      <RouterProvider router={router} />
-    </ProductProvider>
+    <CartProvider>
+      <ProductProvider>
+        <RouterProvider router={router} />
+      </ProductProvider>
+    </CartProvider>
   </StrictMode>
 );

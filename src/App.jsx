@@ -19,6 +19,8 @@ function App() {
     console.log("Added to wishlist:", item);
   };
 
+  
+
   return (
     <div className="App w-full h-screen flex items-center px-[100px]">
       <CartItem el={mockProduct} wishHandle={handleWish} />
