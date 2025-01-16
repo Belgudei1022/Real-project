@@ -6,6 +6,7 @@ import Order from "../componets/dashboard/order";
 import Profit from "../componets/dashboard/profit";
 // import { Link } from "react-router";
 import LineChart from "../componets/dashboard/lineChart";
+import RecentBuyers from "../componets/dashboard/recentBuyers";
 
 const Dashboard = () => {
   return (
@@ -32,6 +33,7 @@ const Dashboard = () => {
             <LineChart  />
             <DoughnutChart  />
           </div>
+          <RecentBuyers/>
         </div>
       </Layout>
     </div>

@@ -29,8 +29,8 @@ function LineChart() {
   };
 
   return (
-    <div className="chart-container flex flex-col items-center shadow-lg gap-8 bg-white border rounded-lg p-4 md:px-8 shadow w-full lg:w-1/2">
-      <h2 className="text-2xl font-semibold">Line Chart</h2>
+    <div className="chart-container flex flex-col items-center text-start shadow-lg gap-8 bg-white border rounded-lg p-4 md:px-8 shadow w-full lg:w-1/2">
+      <h2 className="text-2xl font-semibold">Жилийн дундаж үзүүлэлт</h2>
       <Line
         ref={chartRef}
         data={chartData}
@@ -38,7 +38,7 @@ function LineChart() {
           plugins: {
             title: {
               display: true,
-              text: "Users Gained between 2016-2020",
+              text: "2016-2020 он",
             },
             legend: {
               display: false,

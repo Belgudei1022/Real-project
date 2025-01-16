@@ -15,7 +15,7 @@ const MobileCategory = () => {
   }, []);
 
   return (
-    <div className="w-full h-screen flex flex-col gap-[10px]  ">
+    <div className="w-full h-screen flex flex-col gap-[10px]">
       <Head />
       <div className="content w-full h-fit flex flex-col gap-[30px] px-[10px] py-[40px] rounded-xl bg-white">
         <h1 className="text-[24px] font-medium">Бүтээгдэхүүн</h1>

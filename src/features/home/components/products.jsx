@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
-import { useProducts } from "../../admin/componets/ProductProvider";
+import { useProducts } from "../../../ProductProvider";
 
 const Products = () => {
   const { products: contextProducts } = useProducts();

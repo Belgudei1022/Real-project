@@ -1,8 +1,8 @@
 import React from "react";
 import ProducrtAddCard from "../componets/addProduct/producrtAddCard";
-import ProductCard from "../../home/components/productCard";
+import ProductCard from "../../home/components/ProductCard";
 import Layout from "../componets/layout";
-import { useProducts } from "../componets/ProductProvider";
+import { useProducts } from "../../../ProductProvider";
 
 const AddProduct = () => {
   const { products, setProducts } = useProducts();
@@ -16,7 +16,10 @@ const AddProduct = () => {
       newProduct.price &&
       newProduct.description
     ) {
-      const productWithId = { ...newProduct, id: Math.random().toString(36).substr(2, 9) };
+      const productWithId = {
+        ...newProduct,
+        id: Math.random().toString(36).substr(2, 9),
+      };
       const updatedProducts = [...products, productWithId];
       setProducts(updatedProducts);
       localStorage.setItem("products", JSON.stringify(updatedProducts));
