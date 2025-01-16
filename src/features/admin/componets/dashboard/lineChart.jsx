@@ -22,15 +22,16 @@ function LineChart() {
       {
         label: "Users Gained",
         data: Data.map((data) => data.userGain),
-        backgroundColor: ["rgba(75, 192, 192, 0.6)"],
-        borderWidth: 1,
+        backgroundColor: ["rgba(3, 244, 35, 0.6)"],
+        borderWidth: 2,
       },
     ],
   };
 
   return (
-    <div className="chart-container flex flex-col items-center text-start shadow-lg gap-8 bg-white border rounded-lg p-4 md:px-8 shadow w-full lg:w-1/2">
-      <h2 className="text-2xl font-semibold">Жилийн дундаж үзүүлэлт</h2>
+    <div className="chart-container flex flex-col items-center justify-center shadow-lg gap-8 bg-white border rounded-lg py-4 md:px-8 shadow w-full lg:w-1/2">
+      <h2 className="text-2xl text-start font-semibold">Жилийн дундаж үзүүлэлт</h2>
+
       <Line
         ref={chartRef}
         data={chartData}
@@ -46,12 +47,6 @@ function LineChart() {
           },
         }}
       />
-      <span>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum quisquam
-        esse sed iure, perferendis delectus magnam dolores vel hic vitae
-        adipisci saepe beatae, perspiciatis facere inventore! Modi molestias hic
-        et!
-      </span>
     </div>
   );
 }

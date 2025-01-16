@@ -7,6 +7,7 @@ import Profit from "../componets/dashboard/profit";
 // import { Link } from "react-router";
 import LineChart from "../componets/dashboard/lineChart";
 import RecentBuyers from "../componets/dashboard/recentBuyers";
+import TopGoods from "../componets/dashboard/topGoods";
 
 const Dashboard = () => {
   return (
@@ -30,10 +31,13 @@ const Dashboard = () => {
             <Order />
           </div>
           <div className="flex flex-col gap-8 lg:flex-row">
-            <LineChart  />
-            <DoughnutChart  />
+            <LineChart />
+            <DoughnutChart />
           </div>
-          <RecentBuyers/>
+          <div className="flex gap-8 justify-between w-full">
+            <RecentBuyers />
+            <TopGoods />
+          </div>
         </div>
       </Layout>
     </div>

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Hereglegcid = () => {
     return (
-      <div className="p-4 flex flex-col gap-4">
+      <div className="p-4 flex flex-col w-full gap-4">
         <div className="flex flex-row items-center gap-4">
           <img
             src="https://images.pexels.com/photos/29945204/pexels-photo-29945204/free-photo-of-fashionable-woman-in-sequin-dress-with-red-lighting.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
