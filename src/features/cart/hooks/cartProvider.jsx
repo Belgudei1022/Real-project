@@ -51,6 +51,11 @@ const CartProvider = ({ children }) => {
     setCartData(cartData.filter((item) => item.id !== productId));
   };
 
+  const totalPrice = cartData.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0
+  );
+
   return (
     <cartContext.Provider
       value={{
@@ -59,7 +64,9 @@ const CartProvider = ({ children }) => {
         minusFromQuantity,
         addOnQuantity,
         deleteProduct,
-      }}>
+        totalPrice,
+      }}
+    >
       {children}
     </cartContext.Provider>
   );

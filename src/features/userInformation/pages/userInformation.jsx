@@ -16,7 +16,7 @@ const UserInformation = () => {
           </div>
         </div>
         <div className="desktop w-full h-full  justify-center hidden md:flex">
-          <div className="content max-w-[1440px] w-full h-full flex flex-row ">
+          <div className="content max-w-[1440px] w-full h-full flex gap-[10px] flex-row ">
             <div className="side w-1/4">
               <UserSidebar />
             </div>

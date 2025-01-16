@@ -1,12 +1,12 @@
 import React from "react";
 
-const TotalPrice = ({}) => {
+const TotalPrice = ({ totalPrice }) => {
   return (
-    <div className="w-1/4 flex flex-col gap-[10px]">
+    <div className="w-fit flex flex-col gap-[10px]">
       <h1 className="text-[20px]">
-        Нийт: <span></span>
+        Нийт: <span>$ {totalPrice.toLocaleString()}</span>
       </h1>
-      <button className="bg-[#262626] w-fit px-[50px] py-[10px] rounded-xl ">
+      <button className="bg-[#262626] w-fit px-[50px] py-[10px] rounded-xl">
         <p className="text-white">Захиалах</p>
       </button>
     </div>
