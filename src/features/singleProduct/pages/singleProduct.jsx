@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Head from "../../../shared/components/Nav/head";
 import Category from "../../../shared/components/Nav/category";
 import BackButton from "../../../shared/components/back-button";
@@ -7,7 +7,6 @@ import Title from "../components/title";
 import Rating from "../components/rating";
 import Price from "../components/price";
 import WishButton from "../../../shared/components/wishButton";
-import ToCartButton from "../components/toCartButton";
 import Description from "../components/description";
 import CostumizeColor from "../components/costumizeColor";
 import ShoeSize from "../components/shoeSize";
@@ -18,6 +17,7 @@ import { useParams } from "react-router";
 import Footer from "../../../shared/components/footer";
 import Image from "../components/image";
 import Layout from "../../../shared/components/layout";
+import cartContext from "../../cart/hooks/cartContext";
 
 const SingleProduct = () => {
   const param = useParams();
@@ -35,8 +35,8 @@ const SingleProduct = () => {
   }, [param.id]);
 
   const handleWish = () => {
-    const wishArr = JSON.parse(localStorage.getItem("wish")) || []; 
-    const wishItem = productData[0]; 
+    const wishArr = JSON.parse(localStorage.getItem("wish")) || [];
+    const wishItem = productData[0];
 
     if (wishArr.some((item) => item.id === wishItem.id)) {
       alert("This item is already in your wishlist!");
@@ -49,6 +49,8 @@ const SingleProduct = () => {
 
     setWishData(updatedWishList);
   };
+
+  const { addToCart } = useContext(cartContext);
 
   return (
     <Layout>
@@ -87,7 +89,11 @@ const SingleProduct = () => {
               })}
               <div className="buttons flex flex-col items-end gap-[10px]">
                 <WishButton wishHandle={handleWish} />
-                <ToCartButton />
+                <button
+                  className="w-[130px] h-[40px] bg-[#282828] text-[#fff] rounded-[10px]"
+                  onClick={() => addToCart(productData)}>
+                  Сагсанд нэмэх
+                </button>
               </div>
             </div>
           </div>
@@ -154,17 +160,22 @@ const SingleProduct = () => {
                     })}
                     <div className="buttons flex flex-col items-end gap-[10px]">
                       <WishButton wishHandle={handleWish} />
-                      <ToCartButton />
+                      {productData.map((el) => {
+                        return (
+                          <button
+                            className="w-[130px] h-[40px] bg-[#282828] text-[#fff] rounded-[10px]"
+                            onClick={() => addToCart(el)}>
+                            Сагсанд нэмэх
+                          </button>
+                        );
+                      })}
                     </div>
                   </div>
                 </div>
                 <div className="w-full h-fit flex flex-col gap-[30px] border-t-[1px] rounded-t-[20px] bg-[#fff] py-[30px] px-[20px]">
                   <CostumizeColor />
                   <ShoeSize />
-                  {/* {productData.map((el) => {
-                  return <Description key={el.id} data={el} />;
-                })} */}
-                  {/* <Information /> */}
+
                   <div className="flex flex-col gap-[20px]">
                     <h1 className="font-medium text-[20px] text-start text-black">
                       Сэтгэгдэл
