@@ -2,7 +2,7 @@ import React from 'react';
 
 const TopGoods = () => {
     return (
-      <div className="bg-white rounded-lg border shadow p-4 w-[545px]">
+      <div className="bg-white rounded-lg border shadow p-4 w-full lg:w-1/2">
         <h1 className="text-xl font-bold">Хамгийн их зарагдсан бараа</h1>
         <div className="flex flex-col gap-4 pt-4">
           <li className="text-lg">Red lipstick</li>

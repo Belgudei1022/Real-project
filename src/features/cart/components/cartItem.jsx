@@ -10,8 +10,7 @@ const CartItem = ({ el }) => {
       <div className="flex flex-row gap-[5px]">
         <button
           className="w-fit h-full px-[5px] border rounded-md"
-          onClick={() => deleteProduct(el.id)}
-        >
+          onClick={() => deleteProduct(el.id)}>
           <img src="/src/assets/trashcan-svgrepo-com.svg" alt="Delete" />
         </button>
         <div className="info w-fit h-full flex flex-row gap-[10px]">
@@ -31,19 +30,17 @@ const CartItem = ({ el }) => {
         <div className="flex gap-[5px] items-center">
           <h1 className="lg:text-[18px]">Тоо:</h1>
           <div className="flex flex-row">
-            <p className="border bg-white w-[32px] h-[32px] rounded-l-md flex items-center justify-center border-black">
+            <p className="border bg-white w-[32px] h-[32px] rounded-l-md flex items-center justify-center border-black/50">
               {el.quantity}
             </p>
             <div className="flex flex-col">
               <button
-                className="w-[16px] h-[16px] flex items-center text-center border-t border-r border-black border-b rounded-tr"
-                onClick={() => addOnQuantity(el)}
-              >
+                className="w-[16px] h-[16px] flex items-center text-center border-t border-r border-black/50 border-b rounded-tr"
+                onClick={() => addOnQuantity(el)}>
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
+                  xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M6 12H18M12 6V18"
                     stroke="#000000"
@@ -54,14 +51,12 @@ const CartItem = ({ el }) => {
                 </svg>
               </button>
               <button
-                className="w-[16px] h-[16px] flex items-center border-black border-r border-b rounded-br"
-                onClick={() => minusFromQuantity(el)}
-              >
+                className="w-[16px] h-[16px] flex items-center border-black/50 border-r border-b rounded-br"
+                onClick={() => minusFromQuantity(el)}>
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
+                  xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M6 12L18 12"
                     stroke="#000000"

@@ -6,7 +6,6 @@ const Sidebar = () => {
     <div className="w-full h-screen flex flex-col fixed lg:w-1/6">
       <div className="bg-base-100 text-white lg:h-screen">
         <div className="p-[30px] w-full bg-white text-black">
-
           <Link to="/">
             <img
               src="src\assets\Screenshot_2025-01-06_210416-removebg-preview (1).png"
@@ -23,15 +22,15 @@ const Sidebar = () => {
           <ul className="px-[30px] hidden lg:flex flex-col gap-4">
             <li className="logo flex gap-4 items-center">
               <img src="src/assets/product-svgrepo-com (1).svg" alt="" />
-              <Link to="/addProduct">Add Product</Link>
+              <Link to="/addProduct">Бүтээгдэхүүн нэмэх</Link>
             </li>
-            <li className="logo flex gap-4 items-center">
+            {/* <li className="logo flex gap-4 items-center">
               <img src="src/assets/settings-svgrepo-com.svg" alt="" />
               <Link to="/settings">Settings</Link>
-            </li>
+            </li> */}
             <li className="logo flex gap-4 items-center">
               <img src="src/assets/sign-out-alt-svgrepo-com.svg" alt="" />
-              <a href="/login">Logout</a>
+              <a href="/login">Системээс гарах</a>
             </li>
           </ul>
 
@@ -40,10 +39,11 @@ const Sidebar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="dropdown-content menu bg-base-100 z-[1] w-screen shadow flex items-start">
+            className="dropdown-content menu bg-base-100 z-[1] w-screen shadow flex items-start"
+          >
             <li className="logo flex flex-row items-center">
               <img src="src/assets/product-svgrepo-com (1).svg" alt="" />
-              <Link to="/addProduct">Add Product</Link>
+              <Link to="/addProduct">Бүтээгдэхүүн нэмэх</Link>
             </li>
             <li className="logo flex flex-row items-center">
               <img src="src/assets/settings-svgrepo-com.svg" alt="" />
