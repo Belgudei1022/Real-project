@@ -23,7 +23,7 @@ const Advertisement = () => {
         <div className="hidden md:flex md:w-[45%]  h-[30vh] gap-2">
           <div className="carousel w-3/5 rounded-2xl ">
             <img
-              src="https://static1.squarespace.com/static/502aab3fe4b0fbae871c6c1f/t/529509b1e4b0ea40d2693093/1385499057298/McDonalds+Fry+billboard_comp.jpg"
+              src="https://f.hellowork.com/blogdumoderateur/2021/12/ecommerce-cross-sell-up-sell.jpeg"
               alt=""
               className="w-full object-fill border-[1px] rounded-2xl"
             />
