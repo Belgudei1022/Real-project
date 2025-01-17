@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
+import { useProducts } from "../../../ProductProvider";
 
-const Products = ({ selectedCategory }) => {
+const Products = () => {
+  const { products: contextProducts } = useProducts();
   const [productData, setProductData] = useState([]);
-  const [filteredProducts, setFilteredProducts] = useState([]);
   const [wishData, setWishData] = useState(
     JSON.parse(localStorage.getItem("wish")) || []
   );
@@ -22,19 +23,6 @@ const Products = ({ selectedCategory }) => {
     fetchProducts();
   }, []);
 
-  useEffect(() => {
-    if (selectedCategory) {
-      const filtered = productData.filter(
-        (product) => product.category === selectedCategory
-      );
-      console.log("Filtered Products:", filtered);
-      setFilteredProducts(filtered);
-    } else {
-      setFilteredProducts(productData);
-    }
-  }, [selectedCategory, productData]);
-
-
   const handleWish = (wishItem) => {
     if (wishData.some((item) => item.id === wishItem.id)) {
       alert("This item is already in your wishlist!");
@@ -46,9 +34,11 @@ const Products = ({ selectedCategory }) => {
     localStorage.setItem("wish", JSON.stringify(updatedWishList));
   };
 
+  const combinedProducts = [...contextProducts, ...productData];
+
   return (
     <div className="w-full h-fit grid grid-cols-2 justify-items-center content-center gap-[30px] lg:grid-cols-3 xl:grid-cols-4">
-      {filteredProducts.map((el, index) => (
+      {combinedProducts.map((el, index) => (
         <ProductCard key={index} el={el} wishHandle={handleWish} />
       ))}
     </div>
