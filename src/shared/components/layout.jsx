@@ -11,7 +11,7 @@ const Layout = ({ children }) => {
         <Category />
       </nav>
       <main>{children}</main>
-      <footer>
+      <footer className="w-full bg-[#262626] flex justify-center rounded-t-xl">
         <Footer />
       </footer>
     </div>
