@@ -13,6 +13,9 @@ const Dashboard = () => {
   return (
     <div>
       <Layout>
+        <div className="right-4 absolute p-4 pr-12 ">
+          <img src="src\assets\notification-12-svgrepo-com.svg" alt="" />
+        </div>
         <div
           className="py-[50px] my-40 flex flex-col w-full px-[20px] lg:px-[90px] gap-6 lg:h-fit lg:absolute lg:ml-[50px] lg:right-0
            lg:w-5/6 lg:my-[50px]"

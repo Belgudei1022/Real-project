@@ -23,7 +23,7 @@ const Category = ({ onCategorySelect }) => {
   };
 
   const handleCategoryClick = (category) => {
-    onCategorySelect(category); // Notify parent of the selected category
+    onCategorySelect(category); 
     setIsDesktopCategoryVisible(false);
   };
 
