@@ -20,7 +20,7 @@ const UserInformation = () => {
             <div className="side w-1/4">
               <UserSidebar />
             </div>
-            <div className="w-3/4 flex justify-center items-center">
+            <div className="w-3/4 flex justify-center items-center pt-[10px]">
               <Information />
             </div>
           </div>
