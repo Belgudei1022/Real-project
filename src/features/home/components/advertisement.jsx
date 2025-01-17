@@ -20,7 +20,7 @@ const Advertisement = () => {
   return (
     <div>
       <div className="flex  gap-2">
-        <div className="hidden md:flex md:w-[45%]  h-[30vh] gap-2">
+        <div className="hidden md:flex md:w-[45%]  h-[45vh] gap-2">
           <div className="carousel w-3/5 rounded-2xl ">
             <img
               src="https://static1.squarespace.com/static/502aab3fe4b0fbae871c6c1f/t/529509b1e4b0ea40d2693093/1385499057298/McDonalds+Fry+billboard_comp.jpg"
@@ -28,7 +28,7 @@ const Advertisement = () => {
               className="w-full object-fill border-[1px] rounded-2xl"
             />
           </div>
-          <div className="flex flex-col w-2/5 gap-2">
+          <div className="flex flex-col h-[45vh] w-2/5 gap-2">
             <div className="carousel w-full rounded-2xl h-1/2">
               <img
                 src="https://www.apetogentleman.com/wp-content/uploads/2020/01/greastestsneakerbrands17.jpg"
@@ -46,7 +46,7 @@ const Advertisement = () => {
           </div>
         </div>
         <div className="carousel flex items-center justify-center md:w-[55%] ">
-          <div className="carousel-item w-full h-[30vh] object-contain">
+          <div className="carousel-item w-full h-[45vh] object-contain">
             <img
               src={images[activeIndex]}
               className="w-full object-fill border-[1px] rounded-2xl"
